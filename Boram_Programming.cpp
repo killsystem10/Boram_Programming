@@ -1,6 +1,6 @@
 #include <stdio.h>
 int main() {
-	int temp;
-	scanf("%d", &temp);
-	printf("%d %d %d", temp,temp,temp);
+	long long int a, b;
+	scanf("%lld %lld", &a, &b);
+	printf("%lld", a + b);
 }
