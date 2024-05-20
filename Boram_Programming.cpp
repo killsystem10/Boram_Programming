@@ -1,22 +1,18 @@
 #include <stdio.h>
-#include <queue>
-std::queue<int> Q;
-
-int main() {
-	for (int i = 1; i <= 3; i++) {
-		Q.push(i);
-	}
-	for (int i = 1; i <= 2; i++) {
-		printf("%d ", Q.front());
-		Q.pop();
-	}
-	printf("\n");
-	Q.push(4);
-	Q.push(5);
-	while (!Q.empty()) {
-		printf("%d ", Q.front());
-		Q.pop();
-	}
-	printf("\n");
-	
+#define MAXN 9
+int main()
+{
+	int i, ans, index, A[MAXN + 1];
+	ans = 0;
+	index = 0;
+	for (i = 1; i < MAXN + 1; i++)
+		scanf("%d", &A[i]);
+	for (i = 1; i < MAXN + 1; i++)
+		if (ans < A[i])
+		{
+			ans = A[i];
+			index = i;
+		}
+	printf("%d\n%d\n", ans, index);
+	return 0;
 }
