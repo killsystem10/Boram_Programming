@@ -1,10 +1,22 @@
 #include <stdio.h>
+#include <queue>
+std::queue<int> Q;
+
 int main() {
-	int a, b, c;
-	scanf("%d %d %d", &a, &b, &c);
-	int d, temp;
-	temp = c - 1;
-	d = temp * b;
-	printf("%d", a + d);
+	for (int i = 1; i <= 3; i++) {
+		Q.push(i);
+	}
+	for (int i = 1; i <= 2; i++) {
+		printf("%d ", Q.front());
+		Q.pop();
+	}
+	printf("\n");
+	Q.push(4);
+	Q.push(5);
+	while (!Q.empty()) {
+		printf("%d ", Q.front());
+		Q.pop();
+	}
+	printf("\n");
 	
 }
