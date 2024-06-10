@@ -1,10 +1,17 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+int a,cnt;
+double xt, yt;
 int main() {
-	int a,temp=2;
-	scanf("%d", &a);
-	while (a != 1) {
-		temp = temp * 2;
-		a = a - 1;
+	srand(time(NULL));
+	for (int i = 0; i <= 32767; i++) {
+		xt = (double)(rand()) / 32767 * 2;
+		yt = (double)(rand()) / 32767 * 2;
+		a++;
+		if (xt * xt + yt + yt <= 4) {
+			cnt++;
+		}
 	}
-	printf("%d", temp);
+	printf("%lf\n", 4.0 * cnt / a);
 }
